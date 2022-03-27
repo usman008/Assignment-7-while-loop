@@ -1,0 +1,229 @@
+// While loop
+
+
+//Program 6.1
+
+void main() {
+  int i = 1;
+  while (i <= 5) {
+    print('Pakistan');
+    i++;
+  }
+}
+
+
+//Program 6.2
+
+void main() {
+  int i = 1;
+  while (i <= 10) {
+    print(i);
+    i++;
+  }
+}
+
+//program 6.3
+
+void main() {
+  int i = 1;
+  int sum = 0;
+  while (i <= 5) {
+    print(i);
+    sum = sum + i;
+    i++;
+  }
+  print('Sum is : $sum');
+}
+
+
+//program 6.4
+
+void main() {
+  int i = 1;
+  int squareRoot = 0;
+  while (i <= 5) {
+    squareRoot = i * i;
+    print('i= $i Sq= $squareRoot');
+    i++;
+  }
+}
+
+//program 6.5
+
+import 'dart:io';
+
+void main() {
+  stdout.write('Enter Number: ');
+  String numStr = stdin.readLineSync()!;
+  int? num = int.tryParse(numStr);
+  if (num == null) {
+    print('Invalid Input');
+    return;
+  }
+  int i = 1;
+  int table;
+  while (i <= 10) {
+    table = num * i;
+
+    print('$num * $i = $table');
+    i++;
+  }
+}
+
+
+//program 6.6
+
+
+import 'dart:io';
+
+void main() {
+  stdout.write('Enter Number: ');
+  String numStr = stdin.readLineSync()!;
+  int num = int.tryParse(numStr)!;
+  int sum = 0;
+  while (num > 0) {
+    sum = sum + num % 10;
+    num = num ~/ 10;
+  }
+  print(sum);
+}
+
+//program 6.7
+
+import 'dart:io';
+
+void main() {
+  stdout.write('Enter Number: ');
+  String numStr = stdin.readLineSync()!;
+  int num = int.tryParse(numStr)!;
+  int fact = 1;
+  while (num > 0) {
+    fact = fact * num;
+    num--;
+  }
+  print(fact);
+}
+
+
+//program 6.8
+
+void main() {
+  int degree=0;
+  double radian;
+  while (degree < 360) {
+    radian = degree * 0.0174533;
+    degree++;
+    print('$degree :  $radian');
+  }
+}
+
+
+//program 6.9
+//error
+
+//Program 6.10
+
+import 'dart:io';
+
+void main() {
+  int even = 0;
+  int odd = 0;
+  stdout.write('Enter a positive number: ');
+  String numStr = stdin.readLineSync()!;
+  int num = int.tryParse(numStr)!;
+  if (num <= 0) {
+    print('Invalid input');
+    return;
+  }
+
+  while (num > 0) {
+    if (num % 2 == 0) {
+      even = even + num;
+    } else {
+      odd = odd + num;
+    }
+    num--;
+  }
+  print('Sum of even digits : $even  Sum of Odd digits: $odd');
+}
+
+
+//Program 6.11
+
+import 'dart:io';
+
+void main() {
+  int sum = 0;
+  int mod = 0;
+  stdout.write('Enter a number: ');
+  String numStr = stdin.readLineSync()!;
+  int num = int.tryParse(numStr)!;
+  if (num <= 0) {
+    print('Invalid input');
+    return;
+  }
+
+  while (num > 0) {
+    mod = num % 10;
+    num = num ~/ 10;
+    sum = (mod * mod * mod) + sum;
+  }
+  print('$sum');
+  if (num == sum) {
+    print('Armstrong Number');
+  } else {
+    print('Not Armstrong Number');
+  }
+}
+
+//Program 6.12
+//error
+
+//Program 6.13
+//error
+
+
+//Program 6.14
+
+import 'dart:io';
+
+void main() {
+  stdout.write('Enter a Starting num : ');
+  String stnumStr = stdin.readLineSync()!;
+  int stnum = int.parse(stnumStr);
+
+  stdout.write('Enter a Ending num : ');
+  String enumStr = stdin.readLineSync()!;
+  int ednum = int.parse(enumStr);
+  
+  while (stnum <= ednum) {
+    if (stnum % 2 == 0) {
+      print(stnum);
+    }
+    stnum++;
+  }
+}
+
+
+//Program 6.15
+
+import 'dart:io';
+
+void main() {
+  stdout.write('Enter a Number: ');
+  String numStr = stdin.readLineSync()!;
+  int num = int.parse(numStr);
+  stdout.write('You entered $num \n');
+
+  while (num != -1) {
+    stdout.write('Enter a Number: ');
+    String numStr = stdin.readLineSync()!;
+    int num = int.parse(numStr);
+    stdout.write('You entered $num \n ');
+    if (num == -1) {
+      return;
+    }
+  }
+  stdout.write('Program End');
+}
+
